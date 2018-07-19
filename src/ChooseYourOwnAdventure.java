@@ -4,195 +4,103 @@ public class ChooseYourOwnAdventure {
 
     Scanner stringReader = new Scanner(System.in);
     Scanner numberReader = new Scanner(System.in);
-    Scanner choice = new Scanner(System.in);
 
-    String masterBedroomStoryNo
+    public static void main(String[] args) {
 
-    public ChooseYourOwnAdventure() {
-        //START
-        System.out.println("You are in a creepy house!  Would you like to go \"upstairs\" or into the\n" +
-                "//\"kitchen\"?");
-
-        System.out.print("Enter 'upstairs' or 'kitchen': ");
-        String choice = stringReader.nextLine();
+        Scanner reader = new Scanner(System.in);
+//START
+        System.out.print("You are in a creepy house!  Would you like to go upstairs or into the kitchen?" + " Please Pick one type kitchen or upstairs");
+        String choice = reader.nextLine();
+        System.out.println(choice);
+//A
         if (choice.equals("upstairs")) {
-
-        }
-        if (choice.equals("kitchen")) {
-
-        }
-    }
-
-    //A
-    public void upstairsStory() {
-        System.out.println("Upstairs you see a hallway.  At the end of the hallway is the master\n" +
-                "'bedroom'.  There is also a 'bathroom' off the hallway.  Where would you like to go?");
-
-        System.out.print("Enter 'master bedroom' or 'bathroom': ");
-
-        String upstairsChoice = stringReader.nextLine();
-
-        //C
-        if (upstairsChoice.equals("master bedroom")) {
-            masterBedroomStory();
-        }
-
-        //D
-        if (upstairsChoice.equals("bathroom")) {
-            bathroomStory();
-        }
-
-    }
-
-    //B
-    public void kitchenStory() {
-        System.out.println("There is a long countertop with dirty dishes everywhere.  Off to one side\n" +
-                "there is, as you'd expect, a refrigerator. You may open the \"refrigerator\"\n" +
-                "or look in a \"cabinet\".");
-
-        System.out.print("Enter 'refrigerator' or 'cabinet': ");
-
-        //I
-        String upstairsChoice = stringReader.nextLine();
-        if (upstairsChoice.equals("refrigerator")) {
-            refrigeratorStory();
-        }
-//J
-        if (upstairsChoice.equals("cabinet")) {
-            cabinetStory();
-        }
-
-
-    }
-
-    //E
-    public void masterBedroomStory() {
-        System.out.println("You are in a plush bedroom, with expensive-looking hardwood furniture.  The\n" +
-                "bed is unmade.  In the back of the room, the closet door is ajar.  Would you\n" +
-                "like to open the door? (\"yes\" or \"no\")");
-
-        System.out.print("Enter 'master bedroom' or 'bathroom': ");
-
-        String upstairsChoice = stringReader.nextLine();
-        //F
-        if (upstairsChoice.equals("no")) {
-            masterBedroomStoryNo("Well, then I guess you'll never know what was in there.  Thanks for playing,\n" +
-                    "I'm tired of making nested if statements.");
-        }
+            System.out.print("We are upstairs, go to bedroom or bathroom?\n");
+            choice = reader.nextLine();
+//C
+            if (choice.equals("bedroom")) {
+                System.out.print("Look in closet or don't look in closet, yes or no?");
+                choice = reader.nextLine();
+//E
+                if (choice.equals("yes")) {
+                    System.out.print("Looked in closet =>You looked, closet monster got you. Press ENTER to exit.");
+                    choice = reader.nextLine();
+                }
+//F
+                if (choice.equals("no")) {
+                    System.out.print("Don 't look in closet => You didn' t look, but you lived out of style. Press ENTER to exit.");
+                    choice = reader.nextLine();
+                }
+            }
+//D
+            if (choice.equals("bathroom")) {
+                System.out.print("We are in bathroom, use the toilet, yes or no?\n");
+                choice = reader.nextLine();
 //G
-        if (upstairsChoice.equals("yes")) {
-            masterBedroomStoryYes("You Got sucked in and died");
+                if (choice.equals("yes")) {
+                    System.out.print("You used the toilet. You pooped, died of explosive diarrhea! \uD83D\uDCA9 Press ENTER to exit.\n");
+                    choice = reader.nextLine();
+                }
+//H
+                if (choice.equals("no")) {
+                    System.out.print("You didn't poop, but you lived constipated...Press ENTER to exit, you'll have to poop eventually.");
+                    choice = reader.nextLine();
+                }
+            }
         }
-
-
-        public void kitchenStory () {
-            System.out.println("Inside the refrigerator you see food and stuff.  It looks pretty nasty.\n" +
-                    "Would you like to eat some of the food? (\"yes\" or \"no\")");
-
-            System.out.print("Enter 'yes' or 'no': ");
-
-            String kitchenChoice = stringReader.nextLine();
-
-            //M
-            if (upstairsChoice.equals("no")) {
-                kitchenChoiceNo("You die of starvation... eventually.\n");
+//B
+        if (choice.equalsIgnoreCase("kitchen")) {
+            System.out.print("We are in kitchen, look in the fridge or the cabinet\n");
+            choice = reader.nextLine();
+//I
+            if (choice.equals("fridge")) {
+                System.out.print("We are in the fridge. Eat food, or don 't eat fridge food, yes or no?");
+                choice = reader.nextLine();
+//K
+                if (choice.equals("yes")) {
+                    System.out.print("We ate the fridge food. You ate moldy fridge food, you're poisoned. Press ENTER to exit.");
+                    choice = reader.nextLine();
+                }
+//L
+                if (choice.equals("no")) {
+                    System.out.print("You didn't eat the cabinet food. You may eventually starve. Press ENTER to exit.");
+                    choice = reader.nextLine();
+                }
+//J
             }
+            if (choice.equals("cabinet")) {
+                System.out.print("We are in the cabinet. Eat food, yes or no?");
+                choice = reader.nextLine();
+//M
+                if (choice.equals("yes")) {
+                    System.out.print("You ate the cabinet food. You were poised. Press ENTER to exit.");
+                    choice = reader.nextLine();
+                }
+//N
+                if (choice.equals("no")) {
+                    System.out.print("You didn't eat the cabinet food. You may eventually starve. Press ENTER to exit.");
+                    choice = reader.nextLine();
 
-            //N
-            if (kitchenChoice.equals("yes")) {
-                kitchenChoiceYes("You Got sucked in and died");
+                }
             }
-
-
-            public static void main (String[]args){
-                new ChooseYourOwnAdventure();
-            }}}}
-
- /*       System.out.println("Did you wake up today?");
-        String answer = sc.nextLine();
-*/
-
-
-
-
-        /*Did you wake up today?
-         * No: You Died
-         *
-         * Yes: Did you eat breakfast?
-         * No: You will die of starvation
-         *
-         * Yes: Did you choke?
-         * Yes: You died
-         *
-         * No: Did you*/
-
-
-//Make a short "Choose Your Own Adventure" game. It should feature at least two options after the first page, at least two options for each of the two second-level pages, and at least two options for each of the four third-level pages, for a total of a minimum of eight possible destinations. (but we expect it to take you about 35 minutes so if you have more time, make more branches!)
-//
-//START (Example) => There should always be an ending prompt (did you survive?)
-//
-//Kitchen
-//Open refrigerator
-//Drink strange milk
-//Eat leftovers
-//Open cabinet
-//Eat can of beans
-//Take a plate
-//Upstairs
-//Bedroom
-//Lay on bed
-//Open the drawer
-//Bathroom
-//Look in mirror
-//Use the toilet
-//For this assignment, you should submit the link to your github repository.
-//
-//WELCOME TO MITCHELL'S TINY ADVENTURE!
-//
-//You are in a creepy house!  Would you like to go "upstairs" or into the
-//"kitchen"?
-//> kitchen
-//
-/*//There is a long countertop with dirty dishes everywhere.  Off to one side
-//there is, as you'd expect, a refrigerator. You may open the "refrigerator"
-//or look in a "cabinet".*/
-//> refrigerator
-//
-//Inside the refrigerator you see food and stuff.  It looks pretty nasty.
-//Would you like to eat some of the food? ("yes" or "no")
-//> no
-//
-//You die of starvation... eventually.
-//WELCOME TO MITCHELL'S TINY ADVENTURE!
-//
-//You are in a creepy house!  Would you like to go "upstairs" or into the
-//"kitchen"?
-//> upstairs
-//
-//Upstairs you see a hallway.  At the end of the hallway is the master
-//"bedroom".  There is also a "bathroom" off the hallway.  Where would you like
-//to go?
-//> bedroom
-//
-//You are in a plush bedroom, with expensive-looking hardwood furniture.  The
-//bed is unmade.  In the back of the room, the closet door is ajar.  Would you
-//like to open the door? ("yes" or "no")
-//> no
-//
-//Well, then I guess you'll never know what was in there.  Thanks for playing,
-//I'm tired of making nested if statements.
-
-/*
-//if (response.contains.("upstiars)){
-system.out.print.ln("youjust ran upstaties. bottom or closet?");
-resonpse = keyboard.net();
-if (response.contains("y")) {
-ststem.ojut.prinln("you died. the end");
-break;
-}else if respnse.contains("N")) {
-    System.out.prinln("dope");
-    break;
+        }
     }
 }
 
-if respnse*/
+        /*
+        // First decision: upstairs or kitchen
+                //A Upstairs: bedroom or bathroom
+                        //C Bedroom: look in closet or don't look in closet
+                                        //E: Looked in closet => You looked, closet monster got you
+                                        //F: Don't look in closet => You didn't look, but you lived out of style
+                        //D Bathroom: use toilet or don't use toilet
+                                        //G You pooped, died of explosive diarrhea
+                                        //H You didn't poop, but you lived constipated
+                //B Kitchen: Look in the fridge or the cabinet
+                        //I Eat food, or don't eat fridge food?
+                                        //K You ate moldy fridge food, you're poisoned
+                                        //L You did not eat the fridge food, you starved
+                        //J You looked into the cabinet, eat food?
+                                       //M you ate old cabinet food, you died
+                                       //N you did not eat cabinet food, you starved
+
+*/
